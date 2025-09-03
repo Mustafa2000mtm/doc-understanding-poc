@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Document Verification Results</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-file-upload"></i> Document Processing System</h1>
+            <p>Upload PDF documents or PNG images and process them through our API</p>
+        </header>
+
+        <main class="main-content">
+            <div class="results-section">
+                <div class="result-card success">
+                    <div class="result-header">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Success!</h3>
+                    </div>
+                    <div class="result-content">
+                        <p>Document processed successfully</p>
+                        <div class="result-details">
+                            <div class="detail-item">
+                                <span class="label">Filename:</span>
+                                <span>sample_document.pdf</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Base64 Length:</span>
+                                <span>1,234,567</span>
+                            </div>
+                        </div>
+                        <div class="api-response">
+                            <h4>Document Verification Results:</h4>
+                            <div class="verification-results">
+                                <div class="result-item">
+                                    <div class="result-label">Owner ID:</div>
+                                    <div class="result-value">7005236851</div>
+                                    <div class="confidence-badge">99.4%</div>
+                                </div>
+                                <div class="result-item">
+                                    <div class="result-label">License Number:</div>
+                                    <div class="result-value">3909377695</div>
+                                    <div class="confidence-badge">99.9%</div>
+                                </div>
+                            </div>
+                            <div class="raw-response">
+                                <h5>Raw API Response:</h5>
+                                <pre>{
+  "owner_id_value": "7005236851",
+  "owner_id_confidence": 0.9943335285594819,
+  "license_no_value": "3909377695",
+  "license_no_confidence": 0.9998341394961932
+}</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Document Processing System. Built with Flask & modern web technologies.</p>
+        </footer>
+    </div>
+</body>
+</html>
