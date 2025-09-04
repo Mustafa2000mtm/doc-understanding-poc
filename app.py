@@ -4,6 +4,7 @@ import requests
 import os
 from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
+from datetime import datetime
 
 load_dotenv()
 
@@ -103,7 +104,19 @@ def upload_file():
 
 @app.route('/health')
 def health_check():
-    return jsonify({'status': 'healthy', 'message': 'Document processing service is running'})
+    try:
+        # Basic health check
+        return jsonify({
+            'status': 'healthy', 
+            'message': 'Document processing service is running',
+            'timestamp': str(datetime.now()),
+            'version': '1.0.0'
+        })
+    except Exception as e:
+        return jsonify({
+            'status': 'unhealthy',
+            'error': str(e)
+        }), 500
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8000))
